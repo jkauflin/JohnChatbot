@@ -1,7 +1,7 @@
 {
-  "name": "johnbot2",
+  "name": "johnchatbot",
   "version": "2.0.0",
-  "description": "2nd version of hobby robotics project",
+  "description": "2nd version of hobby robotics project - client part",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,24 +9,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jkauflin/JohnBot2.git"
+    "url": "git+https://github.com/jkauflin/JohnChatbot.git"
   },
   "author": "John J Kauflin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jkauflin/JohnBot2/issues"
+    "url": "https://github.com/jkauflin/JohnChatbot/issues"
   },
-  "homepage": "https://github.com/jkauflin/JohnBot2#readme",
+  "homepage": "https://github.com/jkauflin/JohnChatbot#readme",
   "dependencies": {
     "dotenv": "latest",
     "express": "latest",
     "get-json": "latest",
-    "johnny-five": "latest",
     "lodash": "latest",
     "merge": "1.2.1",
     "node-datetime": "latest",
     "nodemon": "latest",
-    "sound-player": "latest",
     "ws": "latest"
   }
 }

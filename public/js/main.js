@@ -181,15 +181,13 @@ var main = (function () {
     // Respond to string recognized by speech to text (or from search input text box)
     function handleTextFromSpeech(speechText) {
         console.log(" in handleTextFromSpeech, speechText = " + speechText);
-
+                /*
         		for (var i = 0; i < 50; i++) {
         		    main.sayAndAnimate("nose");
         		    util.sleep(70);
-        		}
+                }
+                */
 
-        //sayAndAnimate(speechText);
-
-        /*
         // Call the RiveScript interpreter to get a reply
         brain.reply("username", speechText, this).then(function (reply) {
             console.log("brain reply = "+reply);
@@ -208,7 +206,6 @@ var main = (function () {
         }).catch(function (e) {
             console.log(e);
         });
-        */
 
         /*
         // Check the speech text for other actions, or query response

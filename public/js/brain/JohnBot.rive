@@ -48,7 +48,12 @@
 + (who are you|what [*] your name [*])
 - I am <bot name>.  Please to meet you.
 
-+ (hi|hello|)
++ [*] what is (up|new)
+- Nothing much, what's up with you
+- Nothing, just chillin'
+
++ (hi|hello|greetings) [*]
+- Hello to you.  I'm glad you're here
 
 + ([*] (weird|strange|cool) name [*]|[*] get [*] name [*]|[*] named you [*])
 - It is the name God gave me
