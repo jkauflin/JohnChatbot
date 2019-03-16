@@ -48,7 +48,7 @@
 + (who are you|what [*] your name [*])
 - I am <bot name>.  Please to meet you.
 
-+ [*] what is (up|new)
++ [*] what is (up|new) [*]
 - Nothing much, what's up with you
 - Nothing, just chillin'
 
@@ -73,6 +73,7 @@
 - Two cannibals were eating a clown.  One turns to the other and says <set punchline=Does this taste funny to you>{topic=joke}
 - A horse walks into a bar and orders a beer.  The bartender looks up and says <set punchline=Why the long face>{topic=joke}
 - A horse walks into a bar and orders a beer.  The bartender looks up and says <set punchline=Man you look hammered>{topic=joke}
+- A man with authority walks into a bar and <set punchline=orders everyone a round>{topic=joke}
 - What do you do when attacked by a group of clowns <set punchline=You go for the juggler>{topic=joke}
 - Why does a chicken coop only have two doors <set punchline=Because if it had four it would be a chicken sedan>{topic=joke}
 - How do you make holy water <set punchline=You boil the hell out of it>{topic=joke}
