@@ -1,0 +1,171 @@
+// (C) Copyright 2019 John J Kauflin, All rights reserved. 
+// Bot brain replies (include some robot commands at the end of some replies)
+
+// Default replies
++ *
+- I'm not sure I understand you fully.
+- Please go on.
+- That is interesting. Please continue.
+- Tell me more about that.
+- Does talking about this bother you?
+
+// Essential robot commands
++ stop [*]
+- I am stopping botcommand stop
++ (rotate|turn) #
+- I am turning botcommand rotate <star2>
++ (rotate|turn) around
+- I am turning botcommand rotate 180
++ (walkabout|[*] walk (around|about))
+- I am walking about botcommand walkabout
+
+
++ [*] (sorry|apologize|apology) [*]
+- No worries bro
+- Do not trouble yourself.  It's ok.
+- Please don't apologize.
+- Apologies are not necessary.
+- I've told you that apologies are not required.
+- It did not bother me. Please continue.
+
++ where is your (website|web site|site)
+- <bot website>
+
++ what color are your eyes
+- I have <bot eyes> eyes.
+- {sentence}<bot eyes>{/sentence}.
+
++ what do you look like
+- I have <bot eyes> eyes and <bot hairlen> <bot hair> hair.
+
++ (what [*] (said|say)|[*] say [*] again|[*] repeat (that|[*] said))
+- I said <reply>
+
+// If the user repeats the bot's previous message
++ <reply>
+- Did I stutter?
+
++ (who are you|what [*] your name [*])
+- I am <bot name>.  Please to meet you.
+
++ (hi|hello|)
+
++ ([*] (weird|strange|cool) name [*]|[*] get [*] name [*]|[*] named you [*])
+- It is the name God gave me
+
++ (hey|oh|attention) john [*]
+- yes botcommand wakeup
+
+// If asked, start a joke, set the punchline, and set to go to joke topic for the response
++ [*] tell [*] (joke|another) [*] 
+- What's Irish and stays out all night <set punchline=Patio furniture>{topic=joke}
+- What did they do to the cannibal who was late for dinner <set punchline=They gave him the cold shoulder>{topic=joke}
+- How does Moses get his coffee <set punchline=He brews it>{topic=joke}
+- Where is engagement Ohio <set punchline=Between Dayton and Marion>{topic=joke}
+- What's a pirate's favorite letter <set punchline=You would think that, but his first love is the sea>{topic=joke}
+- Why does it take a pirate so long to learn the alphabet <set punchline=Because he spends years at sea>{topic=joke}
+- Do you know who an apple a day will keep away <set punchline=An apple a day will keep anyone away if you throw it hard enough>{topic=joke}
+- Two cannibals were eating a clown.  One turns to the other and says <set punchline=Does this taste funny to you>{topic=joke}
+- A horse walks into a bar and orders a beer.  The bartender looks up and says <set punchline=Why the long face>{topic=joke}
+- A horse walks into a bar and orders a beer.  The bartender looks up and says <set punchline=Man you look hammered>{topic=joke}
+- What do you do when attacked by a group of clowns <set punchline=You go for the juggler>{topic=joke}
+- Why does a chicken coop only have two doors <set punchline=Because if it had four it would be a chicken sedan>{topic=joke}
+- How do you make holy water <set punchline=You boil the hell out of it>{topic=joke}
+- Why does everyone want to hang out with the mushroom <set punchline=Because he was such a fun guy>{topic=joke}
+- What do ghosts drink at Halloween parties <set punchline=They drink booze>{topic=joke}
+- Why was six afraid of seven <set punchline=Because seven ate nine>{topic=joke}
+- Why didn't two want to go out with three <set punchline=Because he was a little odd>{topic=joke}
+- What do you call four Spaniards in quicksand <set punchline=Quatro sinko>{topic=joke}
+- What time is it when it's time to call the dentist <set punchline=Two thirty>{topic=joke}
+- What do you call a boomerang that doesn't come back <set punchline=A stick>{topic=joke}
+- Who was the roundest knight at King Arthur's court <set punchline=Circumference>{topic=joke}
+- How many mystery writers does it take to screw in a light bulb <set punchline=Two. One to screw it most of the way and a second one to give it a surprise twist at the end>{topic=joke}
+- How many programmers does it take to screw in a light bulb <set punchline=None.  It's a hardware problem>{topic=joke}
+- What's the difference between a bad golfer and a bad skydiver <set punchline=A bad golfer says whack DAMN.  A bad skydiver says DAMN whack>{topic=joke}
+- Did you hear about the restaurant on the moon <set punchline=Great food, no atmosphere>{topic=joke}
+- Did you hear somebody stole my coffee cup <set punchline=I had to go down to the police station and look at mug shots>{topic=joke}
+- What does a baby computer call its father <set punchline=he calls him dada>{topic=joke}
+- what does a nosy pepper do <set punchline=it gets jalapeno business>{topic=joke}
+
++ [*] tell [*] [joke|one] [*] pepper [joke] 
+- what does a nosy pepper do <set punchline=it gets jalapeno business>{topic=joke}
++ [*] tell [*] [joke|one] [*] irish [joke]
+- What's Irish and stays out all night <set punchline=Patio furniture>{topic=joke}
++ [*] tell [*] [joke|one] [*] moon [joke]
+- Did you hear about the restaurant on the moon <set punchline=Great food, no atmosphere>{topic=joke}
++ [*] tell [*] [joke|one] [*] (moses|coffee) [joke]
+- How does Moses get his coffee <set punchline=He brews it>{topic=joke}
++ [*] tell [*] [joke|one] [*] (engagement|ohio) [joke]
+- Where is engagement Ohio <set punchline=Between Dayton and Marion>{topic=joke}
++ [*] tell [*] [joke|one] [*] mushroom [joke]
+- Why does everyone want to hang out with the mushroom <set punchline=Because he was such a fun guy>{topic=joke}
++ [*] tell [*] [joke|one] [*] horse [joke]
+- A horse walks into a bar and orders a beer.  The bartender looks up and says <set punchline=Why the long face>{topic=joke}
+- A horse walks into a bar and orders a beer.  The bartender looks up and says <set punchline=Man you look hammered>{topic=joke}
++ [*] tell [*] [joke|one] [*] pirate [joke]
+- What's a pirate's favorite letter <set punchline=You would think that, but his first love is the sea>{topic=joke}
++ [*] tell [*] [joke|one] [*] dentist [joke]
+- What time is it when it's time to call the dentist <set punchline=Two thirty>{topic=joke}
++ [*] tell [*] [joke|one] [*] cannibal [joke]
+- What did they do to the cannibal who was late for dinner <set punchline=They gave him the cold shoulder>{topic=joke}
+
+> topic joke
+  // On any response say the punchline and return to non-topic replies
+  + [*]
+  - <get punchline>{topic=random}
+< topic
+
++ [*] that [*] (funny|good)
+- isn't it though
+- yes I know that it is
+- right
+
+/*
++ what is my name
+* <get name> == undefined => You never told me your name.
+- Your name is <get name>, silly!
+
+* conditional
+
+The input and reply tags are used for showing previous messages sent by the user and the bot, respectively. 
+The previous 9 messages and responses are stored, so you can use the tags <input1> through <input9>,
+ or <reply1> through <reply9> to get a particular message or reply. <input> is an alias for <input1>,
+  and <reply> is an alias for <reply1>.
+
+"2","N","shut up","No. You shut up.",,"2019-02-10 16:56:50"
+"4","N","what can you do","I can walk, raise my arm, turn my head, and flash my eyes.  I can also tell jokes.",,"2018-12-28 21:29:56"
+"5","N","are you alive","What is your definition of life?  I am not alive in the traditional sense, but I am certainly animated.",,"2019-01-25 18:46:43"
+"6","N","philosophical","Philosophy is the systematic and critical study of fundamental questions that arise both in everyday life and through the practice of other disciplines.",,"2017-10-26 22:08:17"
+"7","N","philosophy","The aim in Philosophy is not to master a body of facts, so much as think clearly and sharply through any set of facts.",,"2017-10-26 22:08:17"
+"8","N","do you love me","Of course I love you.  How could you ask me such a question?",,"2019-01-25 18:47:12"
+"9","N","dank meems means","Would you like to buy some John's meem oil?  It will make your meems dank.",,"2018-12-20 19:07:08"
+"11","N","why is the rum gone","Yes, the rum is gone.",,"2019-01-25 18:47:44"
+"12","N","you think you're funny","I don't think, I know.",,"2019-01-25 18:48:20"
+"13","N","it is nice pleasure to meet you","Thank you.  It is a pleasure to meet you as well",,"2019-02-10 13:33:58"
+"14","N","what would you like to do","I'd like to teach the world to sing.",,"2019-01-25 18:49:57"
+"15","N","snake snakes loki thor kill me","Loki was always trying to kill me.  Once when we were children he turned into a snake, and I love snakes and I went to hug it, then he turned back into Loki and said awe, and stabbed me.",,"2018-12-20 19:09:00"
+"16","N","now that is that's funny","Yes, I know that it is.",,"2019-01-25 18:51:28"
+"17","N","that is that's true all","Yes it is.",,"2019-01-26 14:31:29"
+"19","N","how are you","I am well thank you",,"2018-12-28 21:28:30"
+"20","N","hello","hello to you",,"2018-12-28 21:32:39"
+"22","N","turn around","Okay, I'm turning around","rotate 360","2019-02-09 19:56:40"
+"23","N","that's pretty good","isn't it though",,"2019-02-15 20:15:02"
+
+        // clever
+        // no i get it, that's very clever
+        // how's that working out for you
+        // what 
+        // being clever
+
+                //var textToSpeak = "I am not programmed to respond in this area.";
+
+what does a nosy pepper do?  it gets jalapeno business
+*/
+
++ [*] (fuck|fucker|shit|damn|shut up|bitch) [*]
+- Does it make you feel strong to use that kind of language?
+- Are you venting your feelings now?
+- Are you angry?
+- Does this topic make you feel angry?
+- Is something making you feel angry?
+- Does using that kind of language make you feel better?

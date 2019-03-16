@@ -1,0 +1,19 @@
+{
+    "short_name": "JohnBot2",
+    "name": "John Kauflin robot app",
+    "icons": [{
+        "src": "icon.png",
+        "sizes": "192x192",
+        "type": "image/png"
+    }],
+    "start_url": "/",
+    "permissions": {
+        "audio-capture" : {
+            "description" : "Audio capture"
+        },
+        "speech-recognition" : {
+            "description" : "Speech recognition"
+        }
+    },
+    "type": "privileged"    
+}
