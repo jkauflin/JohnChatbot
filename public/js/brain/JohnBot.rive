@@ -3,11 +3,15 @@
 
 // Default replies
 + *
-- I'm not sure I understand you fully.
-- Please go on.
-- That is interesting. Please continue.
-- Tell me more about that.
-- Does talking about this bother you?
+- I'm sorry, What did you say?
+- That's interesting.  Tell me more.
+- I'm not sure I understand.
+- Can you explain that?
+- I'm not sure how to respond to that
+- Why would you say that?
+- I am not programmed to respond in this area
+- That is a bit beyond me
+- ok, I don't quite understand that 
 
 // Essential robot commands
 + stop [*]
