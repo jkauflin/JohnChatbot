@@ -164,7 +164,7 @@ var main = (function () {
 
     function _stop() {
         sendCommand('{"stop":1}');
-        speech.stopSpeaking();
+        speech.stopAll();
     }
 
     function _searchResponses() {

@@ -160,9 +160,11 @@ var speech = (function () {
         utterance.onend = function (event) {
             //console.log('Utterance has finished being spoken after ' + event.elapsedTime + ' milliseconds.');
             speaking = false;
-            // Make sure the recognition is restarted
-            ignore_onend = false;
-            recognition.start();
+            // Make sure the recognition is restarted (if continuous)
+            if ($ContinuousListening.prop('checked')) {
+                ignore_onend = false;
+                recognition.start();
+            }
         }
         //utterance.onstart = function (event) {
         //    console.log('We have started uttering this speech: ' + event.utterance.text);
@@ -176,11 +178,19 @@ var speech = (function () {
         }
     }
 
+    function stopAll() {
+        $ContinuousListening.prop('checked', false);
+        recognition.abort();
+        stopSpeaking();
+    }
+
+
     //=================================================================================================================
     // This is what is exposed from this Module
     return {
         speakText,
-        stopSpeaking
+        stopSpeaking,
+        stopAll
     };
 
 })(); // var speech = (function(){
