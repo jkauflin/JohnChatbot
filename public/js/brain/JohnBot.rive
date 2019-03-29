@@ -4,6 +4,7 @@
 // Default replies
 + *
 - I'm sorry, What did you say?
+- What was that?
 - That's interesting.  Tell me more.
 - I'm not sure I understand.
 - Can you explain that?
@@ -26,6 +27,7 @@
 
 + [*] (sorry|apologize|apology) [*]
 - No worries bro
+- No worries bra
 - Do not trouble yourself.  It's ok.
 - Please don't apologize.
 - Apologies are not necessary.
@@ -48,6 +50,7 @@
 // If the user repeats the bot's previous message
 + <reply>
 - Did I stutter?
+- Yes that's what I said
 
 + (who are you|what [*] your name [*])
 - I am <bot name>.  Please to meet you.
@@ -64,6 +67,19 @@
 
 + (hey|oh|attention) john [*]
 - yes botcommand wakeup
+
+        // clever
+        // no i get it, that's very clever
+        // how's that working out for you
+        // what 
+        // being clever
++ [*] clever [*] 
+- How's that working out for you <set punchline=Patio furniture>{topic=clever}
+> topic clever
+  // On any response say the next line and return to non-topic replies
+  + [*]
+  - being clever {topic=random}
+< topic
 
 // If asked, start a joke, set the punchline, and set to go to joke topic for the response
 + [*] tell [*] (joke|another) [*] 
@@ -129,6 +145,11 @@
 - isn't it though
 - yes I know that it is
 - right
+- i've got a million of them
+
++ i like that
+- thank you
+- i've got a million of them
 
 /*
 + what is my name
@@ -161,15 +182,6 @@ The previous 9 messages and responses are stored, so you can use the tags <input
 "22","N","turn around","Okay, I'm turning around","rotate 360","2019-02-09 19:56:40"
 "23","N","that's pretty good","isn't it though",,"2019-02-15 20:15:02"
 
-        // clever
-        // no i get it, that's very clever
-        // how's that working out for you
-        // what 
-        // being clever
-
-                //var textToSpeak = "I am not programmed to respond in this area.";
-
-what does a nosy pepper do?  it gets jalapeno business
 */
 
 + [*] (fuck|fucker|shit|damn|shut up|bitch) [*]
@@ -179,3 +191,5 @@ what does a nosy pepper do?  it gets jalapeno business
 - Does this topic make you feel angry?
 - Is something making you feel angry?
 - Does using that kind of language make you feel better?
+- Do you kiss your mother with that mouth?
+- oh my, such language
