@@ -3,8 +3,8 @@
 
 // Default replies
 + *
-- I'm sorry, What did you say?
-- What was that?
+- I'm sorry, What did you say? {weight=10}
+- What was that? {weight=5}
 - That's interesting.  Tell me more.
 - I'm not sure I understand.
 - Can you explain that?
@@ -13,6 +13,7 @@
 - I am not programmed to respond in this area
 - That is a bit beyond me
 - ok, I don't quite understand that 
+- that's pretty lit fam
 
 // Essential robot commands
 + stop [*]

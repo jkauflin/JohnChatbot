@@ -100,11 +100,13 @@ var main = (function () {
         "js/brain/javascript.rive"
     ]).then(onReady).catch(onError);
 
-//    brain.parse()
+//    brain.parse()   // dynamically parse and load script?
+// https://github.com/aichaos/rivescript-js/blob/master/docs/rivescript.md\
 
     function onReady() {
         // Now to sort the replies!
         brain.sortReplies();
+        //console.log("Brain loaded and sorted");
     }
 
     function onError(err, filename, lineno) {
