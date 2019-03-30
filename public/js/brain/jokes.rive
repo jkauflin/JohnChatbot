@@ -1,0 +1,98 @@
+// If asked, start a joke, set the punchline, and set to go to joke topic for the response
++ [*] tell [*] (joke|another) [*] 
+- What's Irish and stays out all night <set punchline=Patio furniture>{topic=joke}
+- What did they do to the cannibal who was late for dinner <set punchline=They gave him the cold shoulder>{topic=joke}
+- How does Moses get his coffee <set punchline=He brews it>{topic=joke}
+- Where is engagement Ohio <set punchline=Between Dayton and Marion>{topic=joke}
+- What's a pirate's favorite letter <set punchline=You would think that, but his first love is the sea>{topic=joke}
+- Why does it take a pirate so long to learn the alphabet <set punchline=Because he spends years at sea>{topic=joke}
+- Do you know who an apple a day will keep away <set punchline=An apple a day will keep anyone away if you throw it hard enough>{topic=joke}
+- Two cannibals were eating a clown.  One turns to the other and says <set punchline=Does this taste funny to you>{topic=joke}
+- A horse walks into a bar and orders a beer.  The bartender looks up and says <set punchline=Why the long face>{topic=joke}
+- A horse walks into a bar and orders a beer.  The bartender looks up and says <set punchline=Man you look hammered>{topic=joke}
+- A man with authority walks into a bar and <set punchline=orders everyone a round>{topic=joke}
+- What do you do when attacked by a group of clowns <set punchline=You go for the juggler>{topic=joke}
+- Why does a chicken coop only have two doors <set punchline=Because if it had four it would be a chicken sedan>{topic=joke}
+- How do you make holy water <set punchline=You boil the hell out of it>{topic=joke}
+- Why does everyone want to hang out with the mushroom <set punchline=Because he was such a fun guy>{topic=joke}
+- What do ghosts drink at Halloween parties <set punchline=They drink booze>{topic=joke}
+- Why was six afraid of seven <set punchline=Because seven ate nine>{topic=joke}
+- Why didn't two want to go out with three <set punchline=Because he was a little odd>{topic=joke}
+- What do you call four Spaniards in quicksand <set punchline=Quatro sinko>{topic=joke}
+- What time is it when it's time to call the dentist <set punchline=Two thirty>{topic=joke}
+- What do you call a boomerang that doesn't come back <set punchline=A stick>{topic=joke}
+- Who was the roundest knight at King Arthur's court <set punchline=Circumference>{topic=joke}
+- How many mystery writers does it take to screw in a light bulb <set punchline=Two. One to screw it most of the way and a second one to give it a surprise twist at the end>{topic=joke}
+- How many programmers does it take to screw in a light bulb <set punchline=None.  It's a hardware problem>{topic=joke}
+- What's the difference between a bad golfer and a bad skydiver <set punchline=A bad golfer says whack DAMN.  A bad skydiver says DAMN whack>{topic=joke}
+- Did you hear about the restaurant on the moon <set punchline=Great food, no atmosphere>{topic=joke}
+- Did you hear somebody stole my coffee cup <set punchline=I had to go down to the police station and look at mug shots>{topic=joke}
+- What does a baby computer call its father <set punchline=he calls him dada>{topic=joke}
+- what does a nosy pepper do <set punchline=it gets jalapeno business>{topic=joke}
+
++ [*] tell [*] [joke|one] [*] irish [joke]
+- What's Irish and stays out all night <set punchline=Patio furniture>{topic=joke}
++ [*] tell [*] [joke|one] [*] moon [joke]
+- Did you hear about the restaurant on the moon <set punchline=Great food, no atmosphere>{topic=joke}
++ [*] tell [*] [joke|one] [*] (moses|coffee) [joke]
+- How does Moses get his coffee <set punchline=He brews it>{topic=joke}
++ [*] tell [*] [joke|one] [*] (engagement|ohio) [joke]
+- Where is engagement Ohio <set punchline=Between Dayton and Marion>{topic=joke}
++ [*] tell [*] [joke|one] [*] mushroom [joke]
+- Why does everyone want to hang out with the mushroom <set punchline=Because he was such a fun guy>{topic=joke}
++ [*] tell [*] [joke|one] [*] horse [joke]
+- A horse walks into a bar and orders a beer.  The bartender looks up and says <set punchline=Why the long face>{topic=joke}
+- A horse walks into a bar and orders a beer.  The bartender looks up and says <set punchline=Man you look hammered>{topic=joke}
++ [*] tell [*] [joke|one] [*] pirate [joke]
+- What's a pirate's favorite letter <set punchline=You would think that, but his first love is the sea>{topic=joke}
+- Why does it take a pirate so long to learn the alphabet <set punchline=Because he spends years at sea>{topic=joke}
++ [*] tell [*] [joke|one] [*] dentist [joke]
+- What time is it when it's time to call the dentist <set punchline=Two thirty>{topic=joke}
++ [*] tell [*] [joke|one] [*] cannibal [joke]
+- What did they do to the cannibal who was late for dinner <set punchline=They gave him the cold shoulder>{topic=joke}
+- Two cannibals were eating a clown.  One turns to the other and says <set punchline=Does this taste funny to you>{topic=joke}
++ [*] tell [*] [joke|one] [*] apple [joke]
+- Do you know who an apple a day will keep away <set punchline=An apple a day will keep anyone away if you throw it hard enough>{topic=joke}
++ [*] tell [*] [joke|one] [*] authority [joke]
+- A man with authority walks into a bar and <set punchline=orders everyone a round>{topic=joke}
++ [*] tell [*] [joke|one] [*] chicken [joke]
+- Why does a chicken coop only have two doors <set punchline=Because if it had four it would be a chicken sedan>{topic=joke}
++ [*] tell [*] [joke|one] [*] clown [joke]
+- What do you do when attacked by a group of clowns <set punchline=You go for the juggler>{topic=joke}
++ [*] tell [*] [joke|one] [*] (holy|water) [joke]
+- How do you make holy water <set punchline=You boil the hell out of it>{topic=joke}
++ [*] tell [*] [joke|one] [*] (kids|kid|number|numbers|spaniards|quicksand) [joke]
+- Why was six afraid of seven <set punchline=Because seven ate nine>{topic=joke}
+- Why didn't two want to go out with three <set punchline=Because he was a little odd>{topic=joke}
+- What do you call four Spaniards in quicksand <set punchline=Quatro sinko>{topic=joke}
++ [*] tell [*] [joke|one] [*] ghost [joke]
+- What do ghosts drink at Halloween parties <set punchline=They drink booze>{topic=joke}
++ [*] tell [*] [joke|one] [*] stick [joke]
+- What do you call a boomerang that doesn't come back <set punchline=A stick>{topic=joke}
++ [*] tell [*] [joke|one] [*] king arthur [joke]
+- Who was the roundest knight at King Arthur's court <set punchline=Circumference>{topic=joke}
++ [*] tell [*] [joke|one] [*] light bulb [joke]
+- How many mystery writers does it take to screw in a light bulb <set punchline=Two. One to screw it most of the way and a second one to give it a surprise twist at the end>{topic=joke}
+- How many programmers does it take to screw in a light bulb <set punchline=None.  It's a hardware problem>{topic=joke}
++ [*] tell [*] [joke|one] [*] (golfer|skydiver) [joke]
+- What's the difference between a bad golfer and a bad skydiver <set punchline=A bad golfer says whack DAMN.  A bad skydiver says DAMN whack>{topic=joke}
++ [*] tell [*] [joke|one] [*] cup [joke]
+- Did you hear somebody stole my coffee cup <set punchline=I had to go down to the police station and look at mug shots>{topic=joke}
++ [*] tell [*] [joke|one] [*] pepper [joke] 
+- what does a nosy pepper do <set punchline=it gets jalapeno business>{topic=joke}
+
+> topic joke
+  // On any response say the punchline and return to non-topic replies
+  + [*]
+  - <get punchline>{topic=random}
+< topic
+
++ [*] that [*] (funny|good) [joke]
+- isn't it though
+- yes I know that it is
+- right
+- i've got a million of them
+
++ i like that
+- thank you
+- i've got a million of them

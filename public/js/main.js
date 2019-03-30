@@ -20,6 +20,7 @@
  * 2019-02-16 JJK	Added walkAbout and Stop button
  * 2019-02-23 JJK   Implementing rivescript for bot responses (after watching
  *                  Coding Train chatbot videos)
+ * 2019-03-29 JJK   Added seperate jokes.rive and eliza.rive
  *============================================================================*/
 var main = (function () {
     'use strict'; // Force declaration of variables before use (among other things)
@@ -92,10 +93,11 @@ var main = (function () {
     // Load our RiveScript files from the brain folder.
     brain.loadFile([
         "js/brain/begin.rive",
+        "js/brain/eliza.rive",
 //        "js/brain/admin.rive",
         "js/brain/JohnBot.rive",
+        "js/brain/Jokes.rive",
 //        "js/brain/clients.rive",
-//        "js/brain/eliza.rive",
 //        "js/brain/myself.rive",
         "js/brain/javascript.rive"
     ]).then(onReady).catch(onError);
