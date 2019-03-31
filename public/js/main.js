@@ -93,10 +93,10 @@ var main = (function () {
     // Load our RiveScript files from the brain folder.
     brain.loadFile([
         "js/brain/begin.rive",
-        "js/brain/eliza.rive",
+//        "js/brain/eliza.rive",
 //        "js/brain/admin.rive",
         "js/brain/JohnBot.rive",
-        "js/brain/Jokes.rive",
+        "js/brain/jokes.rive",
 //        "js/brain/clients.rive",
 //        "js/brain/myself.rive",
         "js/brain/javascript.rive"

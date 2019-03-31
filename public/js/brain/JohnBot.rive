@@ -27,6 +27,16 @@ The previous 9 messages and responses are stored, so you can use the tags <input
 - that's pretty lit fam
 - Let's talk about something else
 
++ [*] (fuck|fucker|shit|damn|bitch|crap) [*]
+- Does it make you feel strong to use that kind of language?
+- Are you venting your feelings now?
+- Are you angry?
+- Does this topic make you feel angry?
+- Is something making you feel angry?
+- Does using that kind of language make you feel better?
+- Do you kiss your mother with that mouth?
+- oh my, such language
+
 // Essential robot commands
 + stop [*]
 - I am stopping botcommand stop
@@ -40,6 +50,16 @@ The previous 9 messages and responses are stored, so you can use the tags <input
 // run 
 // backward
 // faster speed up, slower slow down
+
+// repeat after me
++ [*] (repeat after me|that is enough) [*]
+- ok, I will repeat after you.  Go ahead{topic=repeat}
+> topic repeat
++ [*] stop [*]
+- That was fun {topic=random}
++ *
+- <star>
+< topic
 
 + [*] (sorry|apologize|apology) [*]
 - No worries bro

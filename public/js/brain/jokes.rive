@@ -82,9 +82,9 @@
 - what does a nosy pepper do <set punchline=it gets jalapeno business>{topic=joke}
 
 > topic joke
-  // On any response say the punchline and return to non-topic replies
-  + [*]
-  - <get punchline>{topic=random}
+// On any response say the punchline and return to non-topic replies
++ [*]
+- <get punchline>{topic=random}
 < topic
 
 + [*] that [*] (funny|good) [joke]
