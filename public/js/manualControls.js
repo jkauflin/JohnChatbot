@@ -273,6 +273,7 @@ var manualControls = (function () {
 
 	function eyePushed() {
 		main.sendCommand('{"eyes" : 1}');
+		music.testPlay();
 	}
 	function eyeReleased() {
 		main.sendCommand('{"eyes" : 0}');

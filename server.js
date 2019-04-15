@@ -85,7 +85,9 @@ app.get('/SpotifyLogin', function (req, res) {
   res.cookie(stateKey, state);
 
   // your application requests authorization
-  var scope = 'user-read-private user-read-email';
+  //var scope = 'user-read-private user-read-email';
+  var scope = 'streaming user-read-birthdate user-read-email user-read-private user-read-currently-playing';
+
   res.redirect('https://accounts.spotify.com/authorize?' +
     querystring.stringify({
       response_type: 'code',
@@ -144,16 +146,14 @@ app.get('/callback', function (req, res) {
         });
 
         //res.redirect('/#back-from-spotify');
-        res.redirect('/');
+        //res.redirect('/');
         
         // we can also pass the token to the browser to make requests from there
-        /*
-        res.redirect('/#' +
+        res.redirect('/?' +
           querystring.stringify({
             access_token: access_token,
             refresh_token: refresh_token
           }));
-        */
 
       } else {
         res.redirect('/#' +
