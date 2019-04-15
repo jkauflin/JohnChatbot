@@ -10,7 +10,8 @@ var music = (function () {
     'use strict'; // Force declaration of variables before use (among other things)
     //=================================================================================================================
     // Private variables for the Module
-    
+
+    /*
     window.onSpotifyWebPlaybackSDKReady = () => {
         const token = '*** token ***';
         const player = new Spotify.Player({
@@ -64,7 +65,7 @@ var music = (function () {
         // Connect to the player!
         player.connect();
     };
-
+    */
 
     //=================================================================================================================
     // Variables cached from the DOM

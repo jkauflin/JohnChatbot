@@ -64,13 +64,13 @@ var main = (function () {
     isTouchDevice = 'ontouchstart' in document.documentElement;
 
     // Get environment variables
-    var jqxhr = $.getJSON("dotenv.php", "", function (inEnv) {
+    var jqxhr = $.getJSON("/dotenv.php", "", function (inEnv) {
         env = inEnv;
         //console.log("botEnv, BOT_WEB_URL = " + env.BOT_WEB_URL);
         //console.log("botEnv, UID = " + env.UID);
         //_cacheJokes();
         _connectToBot(env.wsUrl);
-    }).fail(function () {
+    }).fail(function (e) {
         console.log("Error getting environment variables");
     });
 

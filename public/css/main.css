@@ -107,11 +107,29 @@ body {
 	padding: 10px;
 }
 
-/*
-img#header-image {
-	margin-top: -10px; margin-right: 5px;
+.header-image {
+    margin-top: -20px; 
+    margin-right: 5px;
+    height: 60px;
 }
-*/
+.header-image2 {
+    margin: 5px;
+    height: 40px;
+    width: 40px;
+}
+
+.border-red {
+    border: 1px solid red;
+}
+.border-green {
+    border: 1px solid green;
+}
+.border-yellow {
+    border: 1px solid yellow;
+}
+.border-blue {
+    border: 1px solid blue;
+}
 
 /* Turn off the outline on clicks to brand anchors */
 a.navbar-brand {
