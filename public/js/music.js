@@ -5,6 +5,9 @@
  *----------------------------------------------------------------------------
  * Modification History
  * 2019-03-31 JJK   Initial version
+ * 2019-04-15 JJK   Modified to use api wrapper from
+ *                  https://github.com/JMPerez/spotify-web-api-js
+ *                  https://doxdox.org/jmperez/spotify-web-api-js
  *============================================================================*/
 var music = (function () {
     'use strict'; // Force declaration of variables before use (among other things)
@@ -15,121 +18,116 @@ var music = (function () {
     var refresh_token = util.urlParam('refresh_token');
     //console.log("in Music, access_token = " + access_token);
     //console.log("in Music, refresh_token = " + refresh_token);
-
+    var spotifyApi = new SpotifyWebApi();
+    var player;
+    var deviceId;
+    
     //=================================================================================================================
     // Variables cached from the DOM
     var $document = $(document);
-    var $SpotifyLogin = $document.find("#SpotifyLogin");
     var $SpotifyIcon = $document.find("#SpotifyIcon");
-
 
     //=================================================================================================================
     // Bind events
-    //$SpeechToTextButton.click(_ToggleSpeechToText);
 
     if (access_token == null && access_token == undefined) {
-
     } else {
+        spotifyApi.setAccessToken(access_token);
         $SpotifyIcon.attr("src", "img/Spotify_Icon_RGB_Green.png");
+
+        window.onSpotifyWebPlaybackSDKReady = () => {
+            const token = access_token;
+            player = new Spotify.Player({
+                name: 'Web Playback SDK Quick Start Player',
+                getOAuthToken: cb => {
+                    cb(token);
+                }
+            });
+
+            // Error handling
+            player.addListener('initialization_error', ({
+                message
+            }) => {
+                console.error(message);
+            });
+            player.addListener('authentication_error', ({
+                message
+            }) => {
+                console.error(message);
+            });
+            player.addListener('account_error', ({
+                message
+            }) => {
+                console.error(message);
+            });
+            player.addListener('playback_error', ({
+                message
+            }) => {
+                console.error(message);
+            });
+
+            // Playback status updates
+            player.addListener('player_state_changed', state => {
+                console.log(state);
+            });
+
+            // Ready
+            player.addListener('ready', ({
+                device_id
+            }) => {
+                console.log('Ready with Device ID', device_id);
+                deviceId = device_id;
+            });
+
+            // Not Ready
+            player.addListener('not_ready', ({
+                device_id
+            }) => {
+                console.log('Device ID has gone offline', device_id);
+            });
+
+            // Connect to the player!
+            player.connect();
+        };
     }
 
-    window.onSpotifyWebPlaybackSDKReady = () => {
-        const token = access_token;
-        const player = new Spotify.Player({
-            name: 'Web Playback SDK Quick Start Player',
-            getOAuthToken: cb => {
-                cb(token);
-            }
-        });
 
-        // Error handling
-        player.addListener('initialization_error', ({
-            message
-        }) => {
-            console.error(message);
-        });
-        player.addListener('authentication_error', ({
-            message
-        }) => {
-            console.error(message);
-        });
-        player.addListener('account_error', ({
-            message
-        }) => {
-            console.error(message);
-        });
-        player.addListener('playback_error', ({
-            message
-        }) => {
-            console.error(message);
-        });
-
-        // Playback status updates
-        player.addListener('player_state_changed', state => {
-            console.log(state);
-        });
-
-        // Ready
-        player.addListener('ready', ({
-            device_id
-        }) => {
-            console.log('Ready with Device ID', device_id);
-        });
-
-        // Not Ready
-        player.addListener('not_ready', ({
-            device_id
-        }) => {
-            console.log('Device ID has gone offline', device_id);
-        });
-
-        // Connect to the player!
-        player.connect();
-
-        // Play a specified track on the Web Playback SDK's device ID
-        /*
-        function play(device_id) {
-            $.ajax({
-                url: "https://api.spotify.com/v1/me/player/play?device_id=" + device_id,
-                type: "PUT",
-                data: '{"uris": ["spotify:track:5ya2gsaIhTkAuWYEMB0nw5"]}',
-                beforeSend: function (xhr) {
-                    xhr.setRequestHeader('Authorization', 'Bearer ' + _token);
-                },
-                success: function (data) {
-                    console.log(data)
-                }
-        });
-        */
-// GET https: //api.spotify.com/v1/me/playlists
+    function testPlay() {
+        console.log("in testPlay");
 
         player.getVolume().then(volume => {
             let volume_percentage = volume * 100;
             console.log(`The volume of the player is ${volume_percentage}%`);
         });
 
-        //player.togglePlay();
-        // load a list
+                spotifyApi.play(
+                    {
+                        "device_id":deviceId,
+                        "uris": ["spotify:track:5ya2gsaIhTkAuWYEMB0nw5"]
+                    }, function (err, data) {
+                    if (err) console.error(err);
+                    else console.log('Playing song');
+                });
 
-    };
 
-    function testPlay() {
-        console.log("in testPlay");
+        /*
+        // passing a callback - get Elvis' albums in range [20...29]
+        spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE', {
+            limit: 10,
+            offset: 20
+        }, function (err, data) {
+            if (err) console.error(err);
+            else console.log('Artist albums', data);
+        });
 
-                            $.ajax({
-                                url: 'https://api.spotify.com/v1/me/player',
-                                headers: {
-                                    'Authorization': 'Bearer ' + access_token
-                                },
-                                success: function (response) {
-                                    console.log("playlists = "+JSON.stringify(response));
-                                    /*
-                                    userProfilePlaceholder.innerHTML = userProfileTemplate(response);
-                                    $('#login').hide();
-                                    $('#loggedin').show();
-                                    */
-                                }
-                            });
+            if (response.length > 0) {
+                for (var current in response) {
+                    //console.log("question = " + response[current].question);
+                } // loop through JSON list
+            }
+
+        */
+
     }
 
     //=================================================================================================================
