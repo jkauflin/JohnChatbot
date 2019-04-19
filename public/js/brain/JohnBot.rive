@@ -51,6 +51,13 @@ The previous 9 messages and responses are stored, so you can use the tags <input
 // backward
 // faster speed up, slower slow down
 
+// Bot commands for music
++ [*] stop [*] (music|playing|play)
+- botcommand music stop
++ [*] play *
+- botcommand play <star>
+
+
 // repeat after me
 + [*] (repeat after me|that is enough) [*]
 - ok, I will repeat after you.  Go ahead{topic=repeat}

@@ -203,7 +203,11 @@ var main = (function () {
             if (commandFound >= 0) {
                 _executeBotCommands(reply.substr(commandFound + 11));
                 // Let's assume if it's a bot command, we don't want to speak as well
-                //textToSpeak = reply.substr(0,commandFound-1);
+                //var textToSpeak = reply.substr(0,commandFound-1);
+                // 2019-04-19 JJK - Let's trying doing the speaking part too
+                // (if there is something to say)
+                //if (textToSpeak)
+                //sayAndAnimate(reply.substr(0, commandFound - 1));
             } else {
                 sayAndAnimate(reply);
             }
@@ -281,6 +285,14 @@ var main = (function () {
                 tempDegrees = "180";
             }
             sendCommand('{"rotate":1,"rotateDirection":"R","rotateDegrees":' + tempDegrees + '}');
+        } else if (cmdStr.search("play") >= 0) {
+            if (cmdStr.length > 7) {
+                music.searchAndPlay(cmdStr.substr(6));
+            } else {
+                music.play();
+            }
+        } else if (cmdStr.search("music stop") >= 0) {
+            music.stop();
         }
     } // function _executeBotCommands(cmdStr) {
 

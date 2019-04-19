@@ -14,12 +14,18 @@ var music = (function () {
     //=================================================================================================================
     // Private variables for the Module
 
+    // Tokens obtained by backend server processes that have authenticated the user to Spotify,
+    // received a callback from Spotify, and passed the tokens in a re-direct to client browser
     var access_token = util.urlParam('access_token');
     var refresh_token = util.urlParam('refresh_token');
     //console.log("in Music, access_token = " + access_token);
     //console.log("in Music, refresh_token = " + refresh_token);
+
+    // Open source wrapper around the Spotify API (to simplify the calls)
     var spotifyApi = new SpotifyWebApi();
+    // Global references to a web browser player device created in the browser javascript
     var player;
+    // Device Id for the web browser player device
     var deviceId;
     
     //=================================================================================================================
@@ -91,6 +97,31 @@ var music = (function () {
         };
     }
 
+    function stop() {
+        console.log("in stop");
+        player.stop();
+    }
+
+    function play() {
+        console.log("in stopPlay");
+        player.play();
+    }
+
+    function searchAndPlay(searchStr) {
+        // Search spotify
+        console.log("in searchAndPlay, searchStr = "+searchStr);
+        // try song, then artist, then playlist ?  or playlist first?
+
+        spotifyApi
+
+                spotifyApi.play({
+                    "device_id": deviceId,
+                    "uris": ["spotify:track:5ya2gsaIhTkAuWYEMB0nw5"]
+                }, function (err, data) {
+                    if (err) console.error(err);
+                    else console.log('Playing song');
+                });
+    }
 
     function testPlay() {
         console.log("in testPlay");
@@ -133,6 +164,9 @@ var music = (function () {
     //=================================================================================================================
     // This is what is exposed from this Module
     return {
+        stop: stop,
+        play: play,
+        searchAndPlay: searchAndPlay,
         testPlay: testPlay
     };
 
