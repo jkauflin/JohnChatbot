@@ -52,8 +52,12 @@ The previous 9 messages and responses are stored, so you can use the tags <input
 // faster speed up, slower slow down
 
 // Bot commands for music
-+ [*] stop [*] (music|playing|play)
++ [*] (stop|pause) [*] (music|playing|play)
 - botcommand music stop
++ music (stop|pause)
+- botcommand music stop
++ music (play|resume)
+- botcommand play
 + [*] play *
 - botcommand play <star>
 

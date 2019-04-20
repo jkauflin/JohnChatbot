@@ -99,12 +99,22 @@ var music = (function () {
 
     function stop() {
         console.log("in stop");
-        player.stop();
+
+        player.pause().then(() => {
+            console.log('Paused!');
+        });
+        /*
+        player.togglePlay().then(() => {
+            console.log('Toggled playback!');
+        });
+        */
     }
 
     function play() {
-        console.log("in stopPlay");
-        player.play();
+        console.log("in play");
+        player.resume().then(() => {
+            console.log('Resumed!');
+        });
     }
 
     function searchAndPlay(searchStr) {
@@ -112,15 +122,21 @@ var music = (function () {
         console.log("in searchAndPlay, searchStr = "+searchStr);
         // try song, then artist, then playlist ?  or playlist first?
 
-        spotifyApi
-
                 spotifyApi.play({
                     "device_id": deviceId,
-                    "uris": ["spotify:track:5ya2gsaIhTkAuWYEMB0nw5"]
+                    "uris": ["spotify:track:6habFhsOp2NvshLv26DqMb"]
                 }, function (err, data) {
                     if (err) console.error(err);
                     else console.log('Playing song');
                 });
+/*
+play({
+    playerInstance: new Spotify.Player({
+        name: "..."
+    }),
+    spotify_uri: 'spotify:track:7xGfFoTpQ2E7fRF5lN10tr',
+});
+*/
     }
 
     function testPlay() {

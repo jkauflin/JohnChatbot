@@ -168,6 +168,7 @@ var main = (function () {
 
     function _stop() {
         sendCommand('{"stop":1}');
+        music.stop();
         speech.stopAll();
     }
 
@@ -273,6 +274,7 @@ var main = (function () {
     function _executeBotCommands(cmdStr) {
         if (cmdStr == "stop") {
             sendCommand('{"stop":1}');
+            music.stop();
         } else if (cmdStr == "wakeup") {
             console.log('*** WAKE UP ***');
         } else if (cmdStr == "walkabout") {
@@ -287,7 +289,7 @@ var main = (function () {
             sendCommand('{"rotate":1,"rotateDirection":"R","rotateDegrees":' + tempDegrees + '}');
         } else if (cmdStr.search("play") >= 0) {
             if (cmdStr.length > 7) {
-                music.searchAndPlay(cmdStr.substr(6));
+                music.searchAndPlay(cmdStr.substr(5));
             } else {
                 music.play();
             }
