@@ -58,8 +58,24 @@ The previous 9 messages and responses are stored, so you can use the tags <input
 - botcommand music stop
 + music (play|resume)
 - botcommand play
++ (play|resume) music
+- botcommand play
++ (play|resume)
+- botcommand play
 + [*] play *
 - botcommand play <star>
++ [*] play * by *
+- botcommand play-artist-track <star> by <star2>
++ [*] play [*] artist *
+- botcommand play-artist <star>
++ [*] play [*] album *
+- botcommand play-album <star>
++ playlist *
+- botcommand playlist <star>
+
+// play jjk favorites
+
+// John Kauflin band music
 
 
 // repeat after me

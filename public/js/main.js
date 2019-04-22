@@ -209,6 +209,7 @@ var main = (function () {
                 // (if there is something to say)
                 //if (textToSpeak)
                 //sayAndAnimate(reply.substr(0, commandFound - 1));
+                speech.startRecognizing();
             } else {
                 sayAndAnimate(reply);
             }
@@ -288,8 +289,23 @@ var main = (function () {
             }
             sendCommand('{"rotate":1,"rotateDirection":"R","rotateDegrees":' + tempDegrees + '}');
         } else if (cmdStr.search("play") >= 0) {
-            if (cmdStr.length > 7) {
-                music.searchAndPlay(cmdStr.substr(5));
+            if (cmdStr.search("play-artist-track") >= 0) {
+                // play-artist-track <star> by <star2>
+                // 18, then by and end
+            }
+            else if (cmdStr.search("play-artist") >= 0) {
+                // play-artist <star>
+                music.searchAndPlay(cmdStr.substr(12), "artist");
+            }
+            else if (cmdStr.search("play-album") >= 0) {
+                music.searchAndPlay(cmdStr.substr(11), "album");
+            }
+            else if (cmdStr.search("playlist") >= 0) {
+                // playlist <star>
+                music.searchAndPlay(cmdStr.substr(9), "playlist");
+            }
+            else if (cmdStr.length > 7) {
+                music.searchAndPlay(cmdStr.substr(5), "track");
             } else {
                 music.play();
             }

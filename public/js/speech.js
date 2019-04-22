@@ -128,6 +128,7 @@ var speech = (function () {
         STTButtonImage.src = './img/mic-slash.gif';
     }
 
+
     function speakText(textToSpeak) {
         //console.log("in speech.speakText, text = "+textToSpeak);
 
@@ -172,6 +173,14 @@ var speech = (function () {
 
     } // function speakText(textToSpeak) {
 
+    function startRecognizing(event) {
+        if (!recognizing) {
+            recognition.start();
+            ignore_onend = false;
+            STTButtonImage.src = './img/mic-slash.gif';
+        }
+    }
+
     function stopSpeaking() {
         if (speaking) {
             speechSynth.cancel();
@@ -179,7 +188,7 @@ var speech = (function () {
     }
 
     function stopAll() {
-        $ContinuousListening.prop('checked', false);
+        //$ContinuousListening.prop('checked', false);
         recognition.abort();
         stopSpeaking();
     }
@@ -190,7 +199,8 @@ var speech = (function () {
     return {
         speakText,
         stopSpeaking,
-        stopAll
+        stopAll,
+        startRecognizing
     };
 
 })(); // var speech = (function(){

@@ -117,10 +117,96 @@ var music = (function () {
         });
     }
 
-    function searchAndPlay(searchStr) {
+    function searchAndPlay(searchStr,searchType) {
         // Search spotify
-        console.log("in searchAndPlay, searchStr = "+searchStr);
+        console.log("in searchAndPlay, searchStr = "+searchStr+", searchType = "+searchType);
         // try song, then artist, then playlist ?  or playlist first?
+
+        // search types                    ['album', 'artist', 'playlist', 'track']
+
+        //var options = {limit:1};
+
+                spotifyApi.search(
+                    searchStr,
+                    [searchType],
+                    {limit:1}
+                , function (err, response) {
+                    if (err) console.error(err);
+                    else {
+                        /*
+                        console.log('Search response = ' + JSON.stringify(response));
+                        console.log('Search response.artists = ' + response.artists);
+                        console.log('Search response.albums = ' + response.albums);
+                        console.log('Search response.playlist = ' + response.playlist);
+                        console.log('Search response.tracks = ' + response.tracks);
+                        */
+                       
+                        var contextUri;
+                        var uris;
+            
+                        if (response.tracks != undefined) {
+                            uris = [response.tracks.items[0].uri];
+                        }
+                        else if (response.artists != undefined) {
+                            contextUri = [response.artists.items[0].uri];
+                            //  "uri": "spotify:artist:08td7MxkoHQkXnWAYD8d6Q"
+                        }
+                        else if (response.albums != undefined) {
+                            contextUri = [response.albums.items[0].uri];
+                        }
+                        else if (response.playlist != undefined) {
+                            contextUri = [response.playlist.items[0].uri];
+                        }
+
+                        //console.log("uris = " + JSON.stringify(uris));
+
+                        // If there is a track, just starting playing the first one
+                        if (uris != undefined && deviceId != undefined) {
+                                spotifyApi.play({
+                                    "device_id": deviceId,
+                                    "uris": uris
+                                }, function (err, data) {
+                                    if (err) console.error(err);
+                                    else console.log('Playing track');
+                                });
+                        }
+                        /*
+                        else if (contextUri != undefined && deviceId != undefined) {
+                            spotifyApi.play({
+                                "device_id": deviceId,
+                                "context_uri": contextUri
+                            }, function (err, data) {
+                                if (err) console.error(err);
+                                else console.log('Playing song');
+                            });
+                        }
+                        */
+
+                    }
+                });
+
+
+                /*
+
+for (let prop in obj) {
+    console.log(obj[prop]);
+}
+
+for (i in myObj.cars) {
+    x += myObj.cars[i];
+}
+                if (response.length > 0) {
+                    if (response[0].score > 1) {
+                        sayAndAnimate(response[0].verbalResponse);
+                        if (response[0].robotCommand != null && response[0].robotCommand != '') {
+                            _executeBotCommands(response[0].robotCommand);
+                        }
+                    }
+                }
+
+
+                // Despacito
+                    "uris": ["spotify:track:6habFhsOp2NvshLv26DqMb"]
 
                 spotifyApi.play({
                     "device_id": deviceId,
@@ -129,14 +215,7 @@ var music = (function () {
                     if (err) console.error(err);
                     else console.log('Playing song');
                 });
-/*
-play({
-    playerInstance: new Spotify.Player({
-        name: "..."
-    }),
-    spotify_uri: 'spotify:track:7xGfFoTpQ2E7fRF5lN10tr',
-});
-*/
+                */
     }
 
     function testPlay() {
@@ -180,10 +259,9 @@ play({
     //=================================================================================================================
     // This is what is exposed from this Module
     return {
-        stop: stop,
-        play: play,
-        searchAndPlay: searchAndPlay,
-        testPlay: testPlay
+        stop,
+        play,
+        searchAndPlay
     };
 
 })(); // var music = (function(){
