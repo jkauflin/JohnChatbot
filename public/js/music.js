@@ -36,7 +36,8 @@ var music = (function () {
     //=================================================================================================================
     // Bind events
 
-    if (access_token == null && access_token == undefined) {
+    if (access_token == null || access_token == undefined) {
+        // No access token
     } else {
         spotifyApi.setAccessToken(access_token);
         $SpotifyIcon.attr("src", "img/Spotify_Icon_RGB_Green.png");

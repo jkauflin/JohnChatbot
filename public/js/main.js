@@ -21,6 +21,7 @@
  * 2019-02-23 JJK   Implementing rivescript for bot responses (after watching
  *                  Coding Train chatbot videos)
  * 2019-03-29 JJK   Added seperate jokes.rive and eliza.rive
+ * 2019-04-21 JJK   Added handling for bot music commands
  *============================================================================*/
 var main = (function () {
     'use strict'; // Force declaration of variables before use (among other things)
@@ -31,15 +32,6 @@ var main = (function () {
     var wsConnected = false;
     var isTouchDevice = false;
     var date;
-
-    /*
-    var jokeQuestions = [];
-    var jokeAnswers = [];
-    var jokeStarted = false;
-    var prevJoke = -1;
-    var currJoke = 0;
-    */
-
     var userName = '';
     var getUserName = false;
     var confirmName = false;
@@ -64,7 +56,7 @@ var main = (function () {
     isTouchDevice = 'ontouchstart' in document.documentElement;
 
     // Get environment variables
-    var jqxhr = $.getJSON("/dotenv.php", "", function (inEnv) {
+    var jqxhr = $.getJSON("dotenv.php", "", function (inEnv) {
         env = inEnv;
         //console.log("botEnv, BOT_WEB_URL = " + env.BOT_WEB_URL);
         //console.log("botEnv, UID = " + env.UID);
@@ -108,7 +100,7 @@ var main = (function () {
     function onReady() {
         // Now to sort the replies!
         brain.sortReplies();
-        //console.log("Brain loaded and sorted");
+        console.log("Brain loaded and sorted");
     }
 
     function onError(err, filename, lineno) {

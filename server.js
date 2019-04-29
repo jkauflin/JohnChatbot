@@ -80,7 +80,7 @@ app.use(express.static(__dirname + '/public'))
   .use(cookieParser());
 
 //app.get('/login', function (req, res) {
-app.get('/SpotifyLogin', function (req, res) {
+app.get('SpotifyLogin.php', function (req, res) {
   var state = generateRandomString(16);
   res.cookie(stateKey, state);
 

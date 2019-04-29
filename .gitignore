@@ -20,3 +20,4 @@ public/js/artyom.ts
 package-lock.json
 public/dotenv.php
 public/index-SAVE-TABS.html
+public/vendor

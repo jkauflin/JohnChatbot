@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/bootstrap-slider.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/main.css?ver=1.023">
+    <link rel="stylesheet" href="css/main.css?ver=1.025">
 </head>
 
 <body>
@@ -26,7 +26,8 @@
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div id="AppLogo" class="navbar-brand"><img class="header-image" alt="Brand logo photo" src="img/logomark.png"></div>
         <div id="AppTitle" class="navbar-brand">JohnBot</div>
-        <a id="SpotifyLogin" href="/SpotifyLogin"><img id="SpotifyIcon" class="header-image2 right" alt="spotify icon"
+        <!-- Need to do the login as a regular request, not an AJAX call from the javascript -->
+        <a id="SpotifyLogin" href="SpotifyLogin.php"><img id="SpotifyIcon" class="header-image2 right" alt="spotify icon"
             src="img/Spotify_Icon_RGB_White.png"></a>
     </nav><!-- <nav class="navbar navbar-default navbar-fixed-top"> -->
 
@@ -294,10 +295,10 @@
     <script src="js/spotify-web-api.js"></script>
 
     <script src="js/util.js?ver=1.050"></script>
-    <script src="js/music.js?ver=1.011"></script>
+    <script src="js/music.js?ver=1.014"></script>
     <script src="js/manualControls.js?ver=1.005"></script>
     <script src="js/speech.js?ver=1.065"></script>
-    <script src="js/main.js?ver=1.091"></script>
+    <script src="js/main.js?ver=1.096"></script>
 
 </body>
 
