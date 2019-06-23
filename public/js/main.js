@@ -272,6 +272,10 @@ var main = (function () {
             console.log('*** WAKE UP ***');
         } else if (cmdStr == "walkabout") {
             sendCommand('{"walkAbout":1}');
+
+            + (walk(around | about | faster | slower | left | right | forward | backward))
+
+
         } else if (cmdStr.search("rotate") >= 0) {
             var tempDegrees = cmdStr.substr(7);
             if (tempDegrees == null || tempDegrees == '') {
