@@ -269,7 +269,7 @@ var main = (function () {
             sendCommand('{"stop":1}');
             music.stop();
         } else if (cmdStr.substr(0,4) == "walk") {
-            sendCommand('{"walk":1, "walkCommand":' + cmdStr.substr(5) +'}');
+            sendCommand('{"walk":1, "walkCommand":"' + cmdStr.substr(5) +'"}');
         } else if (cmdStr.search("rotate") >= 0) {
             var tempDegrees = cmdStr.substr(7);
             if (tempDegrees == null || tempDegrees == '') {

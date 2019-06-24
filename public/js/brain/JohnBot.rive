@@ -44,7 +44,7 @@ The previous 9 messages and responses are stored, so you can use the tags <input
 - I am turning botcommand rotate <star2>
 + (rotate|turn) around
 - I am turning botcommand rotate 180
-+ (walk (around|about|faster|slower|left|right|forward|backward))
++ walk (around|about|faster|slower|left|right|forward|backward)
 - I am walking botcommand walk <star>
 
 // Bot commands for music
