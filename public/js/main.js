@@ -4,7 +4,7 @@
  * DESCRIPTION: Client-side JS functions and logic for JohnBot2
  *----------------------------------------------------------------------------
  * Modification History
- * 2017-09-08 JJK Initial version 
+ * 2017-09-08 JJK   Initial version 
  * 2017-12-29 JJK	Initial controls and WebSocket communication
  * 2017-01-21 JJK	Implementing response to buttons for manual controls
  * 2018-12-07 JJK	Re-factor to use modules
@@ -337,6 +337,7 @@ var main = (function () {
     }
 
     // Main activity loop
+    /*
     var loopStart = true;
     const activityLoop = setInterval(function () {
         //console.log("In the activityLoop, now = "+Date.now());
@@ -348,14 +349,13 @@ var main = (function () {
         // put stuff for the state loop in here
 
         // Track the amount of time that recognizing is off
-        /*
-        if (elapsedTime > X) {
-        	speech.startRecognition();
-        	sayAndAnimate("Hello, "+userName+".  Are you still there?");
-        }
-        */
+        //if (elapsedTime > X) {
+        //	speech.startRecognition();
+        //	sayAndAnimate("Hello, "+userName+".  Are you still there?");
+        //}
 
     }, 1000);
+    */
 
     //=================================================================================================================
     // This is what is exposed from this Module

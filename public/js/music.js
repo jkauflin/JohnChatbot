@@ -99,11 +99,11 @@ var music = (function () {
     }
 
     function stop() {
-        console.log("in stop");
-
-        player.pause().then(() => {
-            console.log('Paused!');
-        });
+        if (player != null) {
+            player.pause().then(() => {
+                console.log('Paused!');
+            });
+        }
         /*
         player.togglePlay().then(() => {
             console.log('Toggled playback!');
