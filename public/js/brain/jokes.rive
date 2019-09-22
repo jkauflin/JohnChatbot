@@ -29,7 +29,11 @@
 - Did you hear somebody stole my coffee cup <set punchline=I had to go down to the police station and look at mug shots>{topic=joke}
 - What does a baby computer call its father <set punchline=he calls him dada>{topic=joke}
 - what does a nosy pepper do <set punchline=it gets jalapeno business>{topic=joke}
+- What is a horse's favorite wine <set punchline=Chardonnay>{topic=joke}
+- I had a Polish friend who was a sound engineer <set punchline=I had a check one two>{topic=joke}
 
++ [*] tell [*] [joke|one] [*] wine [joke]
+- What is a horse's favorite wine <set punchline=Chardonnay>{topic=joke}
 + [*] tell [*] [joke|one] [*] irish [joke]
 - What's Irish and stays out all night <set punchline=Patio furniture>{topic=joke}
 + [*] tell [*] [joke|one] [*] moon [joke]
