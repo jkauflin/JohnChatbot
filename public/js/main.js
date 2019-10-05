@@ -62,7 +62,7 @@ var main = (function () {
         //console.log("botEnv, UID = " + env.UID);
         //_cacheJokes();
 
-        //_connectToBot(env.wsUrl);
+        _connectToBot(env.wsUrl);
 
     }).fail(function (e) {
         console.log("Error getting environment variables");
