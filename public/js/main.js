@@ -61,7 +61,9 @@ var main = (function () {
         //console.log("botEnv, BOT_WEB_URL = " + env.BOT_WEB_URL);
         //console.log("botEnv, UID = " + env.UID);
         //_cacheJokes();
-        _connectToBot(env.wsUrl);
+
+        //_connectToBot(env.wsUrl);
+
     }).fail(function (e) {
         console.log("Error getting environment variables");
     });
@@ -126,6 +128,10 @@ var main = (function () {
     // Try to establish a websocket connection with the robot
     function _connectToBot(wsUrl) {
         //console.log("in connectToBot, wsUrl = " + wsUrl);
+
+        //SameSite=Strict
+        //Set-Cookie: __Host-session=123; path=/; Secure; HttpOnly; SameSite=Lax
+
         ws = new WebSocket(wsUrl);
         // event emmited when connected
         ws.onopen = function () {

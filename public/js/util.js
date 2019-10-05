@@ -18,6 +18,7 @@
  *                  an Id and check for checkbox "checked"
  * 2019-02-02 JJK   Commented out global ajaxError handler so individual 
  *                  calls could handle exceptions
+ * 2019-10-05 JJK   Removed use of resetval
  *============================================================================*/
  var util = (function(){
     'use strict';  // Force declaration of variables before use (among other things)
@@ -29,7 +30,6 @@
     var $document = $(document);
     var $ajaxError = $document.find(".ajaxError");
     var $wildcard = $('*');
-    var $resetval = $document.find(".resetval");
 
     //=================================================================================================================
     // Bind events
@@ -50,9 +50,6 @@
             $(this).collapse('hide');
         }
     });
-
-     // Using addClear plug-in function to add a clear button on input text fields
-     $resetval.addClear();
 
     //=================================================================================================================
     // Module methods
@@ -179,7 +176,7 @@
         return '<input id="' + idName + '" type="checkbox" ' + tempStr + '>';
     }
     function setInputText(idName, textVal, textSize) {
-        return '<input id="' + idName + '" name="' + idName + '" type="text" class="form-control input-sm resetval" value="' + textVal + '" size="' + textSize + '" maxlength="' + textSize + '">';
+        return '<input id="' + idName + '" name="' + idName + '" type="text" class="form-control input-sm" value="' + textVal + '" size="' + textSize + '" maxlength="' + textSize + '">';
     }
     function setTextArea(idName, textVal, rows) {
         return '<textarea id="' + idName + '" class="form-control input-sm" rows="' + rows + '">' + textVal + '</textarea>';
