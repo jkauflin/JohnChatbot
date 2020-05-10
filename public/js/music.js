@@ -18,8 +18,8 @@ var music = (function () {
     // received a callback from Spotify, and passed the tokens in a re-direct to client browser
     var access_token = util.urlParam('access_token');
     var refresh_token = util.urlParam('refresh_token');
-    //console.log("in Music, access_token = " + access_token);
-    //console.log("in Music, refresh_token = " + refresh_token);
+    console.log("in Music, access_token = " + access_token);
+    console.log("in Music, refresh_token = " + refresh_token);
 
     // Open source wrapper around the Spotify API (to simplify the calls)
     var spotifyApi = new SpotifyWebApi();

@@ -7,6 +7,8 @@
 *----------------------------------------------------------------------------
 * Modification History
 * 2019-04-21 JJK  Initial version
+* 2020-05-10 JJK  Updated to latest version of the library and ran:
+*   composer require jwilsson/spotify-web-api-php
 *============================================================================*/
 
     require_once("/home/jkaufl5/external_includes/SpotifyCredentials.php");

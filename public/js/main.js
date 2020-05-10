@@ -22,6 +22,7 @@
  *                  Coding Train chatbot videos)
  * 2019-03-29 JJK   Added seperate jokes.rive and eliza.rive
  * 2019-04-21 JJK   Added handling for bot music commands
+ * 2020-05-10 JJK   Checking music functions
  *============================================================================*/
 var main = (function () {
     'use strict'; // Force declaration of variables before use (among other things)
