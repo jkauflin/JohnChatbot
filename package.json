@@ -1,11 +1,11 @@
 {
   "name": "johnchatbot",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "2nd version of hobby robotics project - client part",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -23,11 +23,10 @@
     "dotenv": "latest",
     "express": "latest",
     "get-json": "latest",
-    "lodash": "latest",
+    "lodash": "^4.17.15",
     "merge": "1.2.1",
     "node-datetime": "latest",
-    "nodemon": "latest",
     "querystring": "~0.2.0",
-    "request": "~2.83.0"
+    "request": "latest"
   }
 }

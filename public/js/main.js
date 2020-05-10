@@ -47,6 +47,7 @@ var main = (function () {
 
     var $StartButton = $document.find("#StartButton");
     var $StopButton = $document.find("#StopButton");
+    var $RestartButton = $document.find("#RestartButton");
     var $SearchButton = $document.find("#SearchButton");
     var $SearchInput = $document.find("#SearchInput");
     var $searchStr = $document.find("#searchStr");
@@ -76,6 +77,7 @@ var main = (function () {
 
     $StartButton.click(_startInteraction);
     $StopButton.click(_stop);
+    $RestartButton.click(_restart);
 
     //=================================================================================================================
     // Module methods
@@ -166,8 +168,12 @@ var main = (function () {
 
     function _stop() {
         sendCommand('{"stop":1}');
-        music.stop();
+        //music.stop();
         speech.stopAll();
+    }
+
+    function _restart() {
+        sendCommand('{"restart":1}');
     }
 
     function _searchResponses() {
