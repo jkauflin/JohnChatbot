@@ -25,6 +25,7 @@
     $refreshToken = $session->getRefreshToken();
 
     // Send the user along and fetch some data!
+    //header('Location: /bot/player.html?' . 'access_token=' . $accessToken);
     header('Location: /bot?' . 'access_token=' . $accessToken);
     die();
 

@@ -192,7 +192,7 @@ var identityManagement = (function () {
             // eventually cache responses and implement the search in the client
             // using the pairs check?
             // Send the speech text to a search service to check for response
-            $.getJSON(env.BOT_WEB_URL + "getBotResponsesProxy.php", "searchStr=" + util.replaceQuotes(speechText) + "&UID=" + env.UID, function (response) {
+            $.getJSON(env.BOT_WEB_URL + "getBotResponsesProxy.php", "searchStr=" + replaceQuotes(speechText) + "&UID=" + env.UID, function (response) {
                 //console.log("response.length = " + response.length);
                 //console.log("response = " + JSON.stringify(response));
 
@@ -287,6 +287,14 @@ var identityManagement = (function () {
 
 
     }, 1000);
+
+    // Change quotes to spaces
+    // 22 double quote 27 single quote
+     var quoteHexStr = "[\x22\x27]";
+     var regexQuoteHexStr = new RegExp(quoteHexStr, "g");
+     function replaceQuotes(inVal) {
+         return inVal.toString().replace(regexQuoteHexStr, ' ');
+     }
 
     //=================================================================================================================
     // This is what is exposed from this Module

@@ -103,7 +103,7 @@
         return inVal.toString().replace(regexCommaHexStr, '');
     }
 
-     // Change quotes to spaces
+    // Change quotes to spaces
     // 22 double quote 27 single quote
      var quoteHexStr = "[\x22\x27]";
      var regexQuoteHexStr = new RegExp(quoteHexStr, "g");

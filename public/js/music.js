@@ -16,10 +16,11 @@ var music = (function () {
 
     // Tokens obtained by backend server processes that have authenticated the user to Spotify,
     // received a callback from Spotify, and passed the tokens in a re-direct to client browser
-    var access_token = util.urlParam('access_token');
-    var refresh_token = util.urlParam('refresh_token');
-    console.log("in Music, access_token = " + access_token);
-    console.log("in Music, refresh_token = " + refresh_token);
+    // The re-direct will re-load the page (maybe don't re-direct back to index - have a player.html)
+    var access_token = urlParam('access_token');
+    var refresh_token = urlParam('refresh_token');
+    //console.log("in Music, access_token = " + access_token);
+    //console.log("in Music, refresh_token = " + refresh_token);
 
     // Open source wrapper around the Spotify API (to simplify the calls)
     var spotifyApi = new SpotifyWebApi();
@@ -38,6 +39,8 @@ var music = (function () {
 
     if (access_token == null || access_token == undefined) {
         // No access token
+        window.onSpotifyWebPlaybackSDKReady = () => {
+        };
     } else {
         spotifyApi.setAccessToken(access_token);
         $SpotifyIcon.attr("src", "img/Spotify_Icon_RGB_Green.png");
@@ -256,6 +259,22 @@ for (i in myObj.cars) {
         */
 
     }
+
+    function urlParam(name) {
+        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+        if (results == null) {
+            return null;
+        }
+        else {
+            return results[1] || 0;
+        }
+    }
+    /*
+    example.com?param1=name&param2=&id=6
+        urlParam('param1');     // name
+        urlParam('id');         // 6
+        rlParam('param2');      // null
+    */
 
     //=================================================================================================================
     // This is what is exposed from this Module
