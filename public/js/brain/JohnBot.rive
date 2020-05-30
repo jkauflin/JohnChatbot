@@ -27,17 +27,6 @@ The previous 9 messages and responses are stored, so you can use the tags <input
 - that's pretty lit fam
 - Let's talk about something else
 
-+ [*] (fuck|fucker|shit|bullshit|damn|bitch|crap|asshole) [*]
-- Does it make you feel strong to use that kind of language?
-- Are you venting your feelings now?
-- Are you angry?
-- Does this topic make you feel angry?
-- Is something making you feel angry?
-- Does using that kind of language make you feel better?
-- Do you kiss your mother with that mouth?
-- Do you kiss porn stars with that mouth?
-- oh my, such language
-
 // Essential robot commands
 + stop [*]
 - I am stopping botcommand stop
@@ -45,8 +34,11 @@ The previous 9 messages and responses are stored, so you can use the tags <input
 - I am turning botcommand rotate <star2>
 + (rotate|turn) around
 - I am turning botcommand rotate 180
-+ walk (around|about|faster|slower|left|right|forward|backward)
-- I am walking botcommand walk <star>
++ (walk|move)
+- I am walking botcommand walk
+// (around|about|faster|slower|left|right|forward|backward)
++ (walk|move) *
+- I am walking botcommand walk <star2>
 
 // Bot commands for music
 + [*] (stop|pause) [*] (music|playing|play)
@@ -184,3 +176,15 @@ The previous 9 messages and responses are stored, so you can use the tags <input
 
 + [*] (kill|die) [*]
 - Let's not talk about killing or death
+
++ [*] (fuck|fucker|shit|bullshit|damn|bitch|crap|asshole) [*]
+- Does it make you feel strong to use that kind of language?
+- Are you venting your feelings now?
+- Are you angry?
+- Does this topic make you feel angry?
+- Is something making you feel angry?
+- Does using that kind of language make you feel better?
+- Do you kiss your mother with that mouth?
+- Do you kiss porn stars with that mouth?
+- oh my, such language
+

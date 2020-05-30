@@ -164,8 +164,11 @@ var main = (function () {
     }
 
     function _startInteraction() {
-        getUserName = true;
-        sayAndAnimate("Hello, I am the John bought.  What is your name?");
+        //getUserName = true;
+        //sayAndAnimate("Hello, I am the John bought.  What is your name?");
+
+        sendCommand('{"walk":1}');
+
     }
 
     function _stop() {
